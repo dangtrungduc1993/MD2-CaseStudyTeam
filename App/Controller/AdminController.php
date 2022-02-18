@@ -15,7 +15,7 @@ class AdminController
 
     public function login()
     {
-        
+        $this->adminController->getAll();
     }
 
 
