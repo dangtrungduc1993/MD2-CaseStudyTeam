@@ -9,9 +9,10 @@ class DBConnect
 
     public function __construct()
     {
-        $this->dsn = "mysql:host=localhost;dbname=demomvcfinal;charset=utf8";
+        $this->dsn = "mysql:host=localhost;dbname=lu_store;charset=utf8";
         $this->username = "root";
         $this->password = "";
+
     }
 
     public function connect()
