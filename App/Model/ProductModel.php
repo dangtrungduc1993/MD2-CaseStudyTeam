@@ -5,7 +5,7 @@ class ProductModel extends BaseModel
 {
     public $table = "products";
 
-    public function getAll()
+    public function showAll()
     {
         $sql = "select products.id as id, products.name , image, price, quantity, content, shoeType_id as Type, brand_id as Brand, size_id as Size  
                 from products join shoeTypes on shoeType_id = shoeTypes.id 
