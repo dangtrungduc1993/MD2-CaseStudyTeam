@@ -7,11 +7,9 @@ class ProductModel extends BaseModel
 
     public function showAll()
     {
-        $sql = "select products.id as id, products.name , image, price, quantity, content, shoeType_id as Type, brand_id as Brand, size_id as Size  
-                from products join shoeTypes on shoeType_id = shoeTypes.id 
-               join brand on brand_id = brands.id
-                join sizes on size_id = sizes.id
-                order by id desc";
+        $sql = "select products.name as productName, image,price, quantity, content, brands.name as brandName from products
+                join brands on products.brand_id = brands.id";
+
         $stmt = $this->connect->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
