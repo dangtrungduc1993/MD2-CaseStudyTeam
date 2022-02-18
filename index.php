@@ -28,6 +28,9 @@ $page = $_GET["page"]??"";
         case "product-list":
             $productController->showAll();
             break;
+        case "product-detail":
+            $productController->showById($_GET["id"]);
+            break;
     }
 
 ?>

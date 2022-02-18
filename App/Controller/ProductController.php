@@ -12,7 +12,16 @@ class ProductController
     public function showAll()
     {
         $products = $this->productModel->showAll();
+//        var_dump($products);
+//        die();
         include "App/View/product/list.php";
+    }
+    public function showById($id)
+    {
+        $products = $this->productModel->showById($id);
+        var_dump($products);
+        die();
+        include "App/View/product/detail.php";
     }
 
 }

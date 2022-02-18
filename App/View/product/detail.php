@@ -10,7 +10,6 @@
         <th>Type</th>
         <th>Brand</th>
         <th>Size</th>
-        <th colspan="3">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -26,11 +25,6 @@
                 <td><?php echo $product->Type ?></td>
                 <td><?php echo $product->Brand ?></td>
                 <td><?php echo $product->Sizes ?></td>
-                <td><a href="index.php?page=product-detail">Detail</a></td>
-                <td><a href="index.php?page=product-detail">Update</a></td>
-                <td><a href="index.php?page=product-detail">Delete</a></td>
-
-
             </tr>
         <?php endforeach; ?>
     <?php else: ?>

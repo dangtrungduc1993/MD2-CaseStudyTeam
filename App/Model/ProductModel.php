@@ -7,11 +7,26 @@ class ProductModel extends BaseModel
 
     public function showAll()
     {
-        $sql = "select products.name as productName, image,price, quantity, content, brands.name as brandName from products
-                join brands on products.brand_id = brands.id";
+        $sql = "select products.id as id, products.name as Name, image,price, quantity, content,shoetypes.name as Type, brands.name as Brand, sizes.size as Sizes from products
+                join shoetypes on products.shoeType_id = shoetypes.id
+                join brands on products.brand_id = brands.id
+                join sizes on products.size_id = sizes.id
+            ";
 
         $stmt = $this->connect->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
+    public function showById($id)
+    {
+        $sql = "select products.id as id, products.name as Name, image,price, quantity, content,shoetypes.name as Type, brands.name as Brand, sizes.size as Sizes from products
+                join shoetypes on products.shoeType_id = shoetypes.id
+                join brands on products.brand_id = brands.id
+                join sizes on products.size_id = sizes.id where id =".$id
+         ;
+
+        $stmt = $this->connect->query($sql);
+        return $stmt->fetch(\PDO::FETCH_OBJ);
     }
 
     public function create($data)
