@@ -13,6 +13,11 @@ class AdminController
         $this->adminController = new AdminModel();
     }
 
+    public function login()
+    {
+        
+    }
+
 
 
 }
