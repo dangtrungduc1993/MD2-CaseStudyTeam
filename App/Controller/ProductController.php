@@ -12,7 +12,7 @@ class ProductController
     public function showAll()
     {
         $products = $this->productModel->showAll();
-        include_once "App/View/product/list.php";
+        include "App/View/product/list.php";
     }
 
 }

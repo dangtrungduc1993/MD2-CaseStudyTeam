@@ -24,7 +24,7 @@
                 <td><?php echo $product->content ?></td>
                 <td><?php echo $product->shoeType_id ?></td>
                 <td><?php echo $product->brand_id ?></td>
-                <td><?php echo $product->size_i ?></td>
+                <td><?php echo $product->size_id ?></td>
             </tr>
         <?php endforeach; ?>
     <?php else: ?>
