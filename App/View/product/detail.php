@@ -13,25 +13,16 @@
     </tr>
     </thead>
     <tbody>
-    <?php if (!empty($products)): ?>
-        <?php foreach ($products as $key => $product): ?>
-            <tr>
-                <td><?php echo $key + 1 ?></td>
-                <td><?php echo $product->Name ?></td>
-                <td><?php echo $product->image ?></td>
-                <td><?php echo $product->price ?></td>
-                <td><?php echo $product->quantity ?></td>
-                <td><?php echo $product->content ?></td>
-                <td><?php echo $product->Type ?></td>
-                <td><?php echo $product->Brand ?></td>
-                <td><?php echo $product->Sizes ?></td>
-            </tr>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <tr>
-            <td colspan="8">Chưa có sản phẩm nào</td>
-        </tr>
-    <?php endif; ?>
-
+    <tr>
+        <td><?php echo $products->id ?></td>
+        <td><?php echo $products->Name ?></td>
+        <td><?php echo $products->image ?></td>
+        <td><?php echo $products->price ?></td>
+        <td><?php echo $products->quantity ?></td>
+        <td><?php echo $products->content ?></td>
+        <td><?php echo $products->Type ?></td>
+        <td><?php echo $products->Brand ?></td>
+        <td><?php echo $products->Sizes ?></td>
+    </tr>
     </tbody>
 </table>
