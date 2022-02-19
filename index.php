@@ -4,24 +4,15 @@ require "vendor/autoload.php";
 
 use App\Controller\AdminController;
 use App\Controller\ProductController;
-<<<<<<< HEAD
-use App\Controller\shoeTypeController;
-=======
 
-<<<<<<< HEAD
-=======
->>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
-use App\Model\AdminModel;
->>>>>>> 21058593e189efbf676d43a4a962eb83db940602
+use App\Controller\shoeTypeController;
+
 
 $admin = new AdminController();
 $productController = new ProductController();
-<<<<<<< HEAD
+
 $shoeTypeController = new shoeTypeController();
 $page = $_GET["page"]??"";
-=======
-$page = $_GET["page"] ?? "";
->>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
 
 ?>
 
@@ -37,7 +28,7 @@ $page = $_GET["page"] ?? "";
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-<<<<<<< HEAD
+
 <a href="index.php?page=product-list">Show list Product</a>
 <a href="index.php?page=shoeType-list">Show list Shoe Type</a>
 <?php
@@ -57,9 +48,6 @@ $page = $_GET["page"] ?? "";
         case "product-update":
             $productController->updateProduct();
             break;
-
-
-
         case "shoeType-list":
             $shoeTypeController->showAll();
             break;
@@ -75,98 +63,17 @@ $page = $_GET["page"] ?? "";
         case "product-update":
             $productController->updateProduct();
             break;
-
-    }
-=======
-<?php include "App/View/layout/layoutLogin.php"?>
-    <!--<a href="index.php?page=product-list">Show list</a>-->
-<?php
-switch ($page) {
-    case "product-list":
-        $productController->showAll();
-        break;
-    case "product-detail":
-        $productController->showById($_GET["id"]);
-        break;
     case "login":
-       $admin->login();
+        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+            $admin->showFormLogin();
+        }else{
+            $admin->login();
+        }
         break;
     default:
+        header("location:index.php?page=login");
 }
->>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
-
 ?>
-
-<form action="" method="post">
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
-                        <i class="fas fa-envelope prefix grey-text"></i>
-                        <input type="email" name="email" id="defaultForm-email" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
-                    </div>
-
-                    <div class="md-form mb-4">
-                        <i class="fas fa-lock prefix grey-text"></i>
-                        <input type="password" name="password" id="defaultForm-pass" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-                    </div>
-
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-default">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-
-
-<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body mx-3">
-                <div class="md-form mb-5">
-                    <i class="fas fa-user prefix grey-text"></i>
-                    <input type="text" id="orangeForm-name" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
-                </div>
-                <div class="md-form mb-5">
-                    <i class="fas fa-envelope prefix grey-text"></i>
-                    <input type="email" id="orangeForm-email" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
-                </div>
-
-                <div class="md-form mb-4">
-                    <i class="fas fa-lock prefix grey-text"></i>
-                    <input type="password" id="orangeForm-pass" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
-                </div>
-
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-deep-orange">Sign up</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
