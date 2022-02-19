@@ -4,21 +4,21 @@ require "vendor/autoload.php";
 
 use App\Controller\AdminController;
 use App\Controller\ProductController;
-<<<<<<< HEAD
-use App\Controller\shoeTypeController;
-=======
 
->>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
+use App\Controller\shoeTypeController;
+
+
+
 use App\Model\AdminModel;
 
 $admin = new AdminController();
 $productController = new ProductController();
-<<<<<<< HEAD
+
 $shoeTypeController = new shoeTypeController();
 $page = $_GET["page"]??"";
-=======
-$page = $_GET["page"] ?? "";
->>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
+
+
+
 
 ?>
 
@@ -34,7 +34,7 @@ $page = $_GET["page"] ?? "";
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-<<<<<<< HEAD
+
 <a href="index.php?page=product-list">Show list Product</a>
 <a href="index.php?page=shoeType-list">Show list Shoe Type</a>
 <?php
@@ -71,32 +71,23 @@ $page = $_GET["page"] ?? "";
             break;
         case "product-update":
             $productController->updateProduct();
+
+
+        break;
+        case "login":
+            if ($_SERVER["REQUEST_METHOD"] == "GET"){
+                $admin->showFormLogin();
+            }else{
+                $admin->login();
+            }
             break;
 
-    }
-=======
-<?php include "App/View/layout/layoutLogin.php"?>
-    <!--<a href="index.php?page=product-list">Show list</a>-->
-<?php
-switch ($page) {
-    case "product-list":
-        $productController->showAll();
-        break;
-    case "product-detail":
-        $productController->showById($_GET["id"]);
-        break;
-    case "login":
-        if ($_SERVER["REQUEST_METHOD"] == "GET"){
-            $admin->showFormLogin();
-        }else{
-            $admin->login();
-        }
-        break;
+            default:
+                    header("location:index.php?page=login");
 
-    default:
-        header("location:index.php?page=login");
+
 }
->>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
+
 
 ?>
 

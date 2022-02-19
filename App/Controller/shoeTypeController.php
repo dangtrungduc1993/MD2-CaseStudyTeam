@@ -14,7 +14,7 @@ class shoeTypeController
         $shoeTypes = $this->shoeTypeModel->showAll();
 //        var_dump($products);
 //        die();
-        include "App/View/product/list.php";
+        include "App/View/shoeType/list.php";
     }
     public function showById($id)
     {
