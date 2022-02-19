@@ -1,3 +1,5 @@
+<?php include "App/View/layout/layoutHome.php" ?>
+<div class="container mt-3">
 <form action="" method="post">
     <input type="text" name="name" placeholder="Nhập tên giày">
     <input type="text" name="image" placeholder="Chọn ảnh giày">
@@ -9,3 +11,4 @@
     <input type="text" name="size_id" placeholder="Nhập kích cỡ giày">
     <button>Create</button>
 </form>
+</div>

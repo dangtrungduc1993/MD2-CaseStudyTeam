@@ -12,15 +12,15 @@ class shoeTypeController
     public function showAll()
     {
         $shoeTypes = $this->shoeTypeModel->showAll();
-//        var_dump($products);
+//        var_dump($shoeTypes);
 //        die();
         include "App/View/shoeType/list.php";
     }
+
     public function showById($id)
     {
         $products = $this->productModel->showById($id);
-//        var_dump($products);
-//        die();
+
         include "App/View/product/detail.php";
     }
     public function deleteById($id)

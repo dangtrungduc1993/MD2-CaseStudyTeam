@@ -1,3 +1,5 @@
+<?php include "App/View/layout/layoutHome.php" ?>
+<div class="container mt-3">
 <table border="1">
     <thead>
     <tr>
@@ -26,3 +28,4 @@
     </tr>
     </tbody>
 </table>
+</div>

@@ -4,15 +4,12 @@ require "vendor/autoload.php";
 
 use App\Controller\AdminController;
 use App\Controller\ProductController;
-
 use App\Controller\shoeTypeController;
-
 
 $admin = new AdminController();
 $productController = new ProductController();
-
 $shoeTypeController = new shoeTypeController();
-$page = $_GET["page"]??"";
+$page = $_GET["page"] ?? "";
 
 ?>
 
@@ -29,49 +26,42 @@ $page = $_GET["page"]??"";
 </head>
 <body>
 
-<a href="index.php?page=product-list">Show list Product</a>
-<a href="index.php?page=shoeType-list">Show list Shoe Type</a>
+<!--<a href="index.php?page=product-list">Show list Product</a>-->
+<!--<a href="index.php?page=shoeType-list">Show list Shoe Type</a>-->
+
+
 <?php
-    switch ($page){
-        case "product-list":
-            $productController->showAll();
-            break;
-        case "product-detail":
-            $productController->showById($_GET["id"]);
-            break;
-        case "product-delete":
-            $productController->deleteById($_GET["id"]);
-            break;
-        case "product-create":
-            $productController->createProduct();
-            break;
-        case "product-update":
-            $productController->updateProduct();
-            break;
-        case "shoeType-list":
-            $shoeTypeController->showAll();
-            break;
-        case "product-detail":
-            $productController->showById($_GET["id"]);
-            break;
-        case "product-delete":
-            $productController->deleteById($_GET["id"]);
-            break;
-        case "product-create":
-            $productController->createProduct();
-            break;
-        case "product-update":
-            $productController->updateProduct();
-            break;
+switch ($page) {
+    case "product-list":
+        $productController->showAll();
+        break;
+    case "product-detail":
+        $productController->showById($_GET["id"]);
+        break;
+    case "product-delete":
+        $productController->deleteById($_GET["id"]);
+        break;
+    case "product-create":
+        $productController->createProduct();
+        break;
+    case "product-update":
+        $productController->updateProduct();
+        break;
+    case "shoeType-list":
+        $shoeTypeController->showAll();
+        break;
     case "login":
-        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $admin->showFormLogin();
-        }else{
-            $admin->login();
+        } else {
+            $admin->login($_REQUEST);
         }
         break;
+    case "logout":
+        $admin->logout();
+        break;
     default:
-        header("location:index.php?page=login");
+
 }
 ?>
 

@@ -12,44 +12,30 @@ class AdminController
         $this->adminController = new AdminModel();
     }
 
-    public function login()
+    public function login($request)
     {
-        if ($_SERVER["REQUEST_METHOD"]=="GET"){
-            include "App/View/login/login.php";
-        }else {
-            if ($this->checkAdmin($_POST) == true){
-
-                include "App/View/layout/layoutHome.php";
-            }else{
-                include "App/View/login/login.php";
-            }
+        if ($this->adminController->checkLogin($request["email"], $request["password"])) {
+            $_SESSION["user"] = $this->adminController->getAll();
+            header("location:index.php?page=product-list");
+        } else {
+            header("location:index.php?page=login");
         }
-
     }
 
-    public function checkAdmin($request) : bool
+
+    public function logout()
     {
-        $datas = $this->adminController->getAll();
-//        var_dump($datas);
-//        die();
-        foreach ($datas as $data){
-            if ($data->email === $request["email"] && $data->password === $request["password"]){
-                $_SESSION["admin"] = $data;
-
-                return true;
-            }
-        }
-        return false;
-
+        unset($_SESSION["user"]);
+        header("Location:index.php?page=login");
     }
 
-    public function createAcc()
+    public function showFormLogin()
     {
-        if ($_SERVER["REQUEST_METHOD"] =="GET"){
-        include "App/View/login/createAnAccount.php";
 
+        if (isset($_SESSION["user"])) {
+            header("location:index.php?page=product-list");
         }
-
+        include_once "App/View/login/login.php";
     }
 
 
