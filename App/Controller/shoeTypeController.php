@@ -1,18 +1,17 @@
 <?php
+
 namespace App\Controller;
 use App\Model\shoeTypeModel;
-use App\Model\ProductModel;
-
-class ProductController
+class shoeTypeController
 {
-    public $productModel;
+    public $shoeTypeModel;
     public function __construct()
     {
-        $this->productModel = new ProductModel();
+        $this->shoeTypeModel = new shoeTypeModel();
     }
     public function showAll()
     {
-        $products = $this->productModel->showAll();
+        $shoeTypes = $this->shoeTypeModel->showAll();
 //        var_dump($products);
 //        die();
         include "App/View/product/list.php";
@@ -47,16 +46,15 @@ class ProductController
             $this->productModel->createProduct($data);
             header("location:index.php?page=product-list");
         }}
-        public function updateProduct(){
-            if ($_SERVER["REQUEST_METHOD"]== "GET"){
-                $data = $this->productModel->showById($_GET["id"]);
-                include "App/View/product/update.php";
-            }
-            else {
+    public function updateProduct(){
+        if ($_SERVER["REQUEST_METHOD"]== "GET"){
+            $data = $this->productModel->showById($_GET["id"]);
+            include "App/View/product/update.php";
+        }
+        else {
 
-                $this->productModel->updateProduct($_REQUEST["id"],$_POST);
-                header("location:index.php?page=product-list");
-            }
+            $this->productModel->updateProduct($_REQUEST["id"],$_POST);
+            header("location:index.php?page=product-list");
         }
     }
-
+}

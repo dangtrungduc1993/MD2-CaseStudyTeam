@@ -4,11 +4,24 @@ require "vendor/autoload.php";
 
 use App\Controller\AdminController;
 use App\Controller\ProductController;
+<<<<<<< HEAD
+use App\Controller\shoeTypeController;
+=======
 
+<<<<<<< HEAD
+=======
+>>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
+use App\Model\AdminModel;
+>>>>>>> 21058593e189efbf676d43a4a962eb83db940602
 
 $admin = new AdminController();
 $productController = new ProductController();
+<<<<<<< HEAD
+$shoeTypeController = new shoeTypeController();
+$page = $_GET["page"]??"";
+=======
 $page = $_GET["page"] ?? "";
+>>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
 
 ?>
 
@@ -24,6 +37,47 @@ $page = $_GET["page"] ?? "";
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
+<<<<<<< HEAD
+<a href="index.php?page=product-list">Show list Product</a>
+<a href="index.php?page=shoeType-list">Show list Shoe Type</a>
+<?php
+    switch ($page){
+        case "product-list":
+            $productController->showAll();
+            break;
+        case "product-detail":
+            $productController->showById($_GET["id"]);
+            break;
+        case "product-delete":
+            $productController->deleteById($_GET["id"]);
+            break;
+        case "product-create":
+            $productController->createProduct();
+            break;
+        case "product-update":
+            $productController->updateProduct();
+            break;
+
+
+
+        case "shoeType-list":
+            $shoeTypeController->showAll();
+            break;
+        case "product-detail":
+            $productController->showById($_GET["id"]);
+            break;
+        case "product-delete":
+            $productController->deleteById($_GET["id"]);
+            break;
+        case "product-create":
+            $productController->createProduct();
+            break;
+        case "product-update":
+            $productController->updateProduct();
+            break;
+
+    }
+=======
 <?php include "App/View/layout/layoutLogin.php"?>
     <!--<a href="index.php?page=product-list">Show list</a>-->
 <?php
@@ -39,6 +93,7 @@ switch ($page) {
         break;
     default:
 }
+>>>>>>> c6eeeda91119d2020693d8a47ebe9ddb4b8d2cf1
 
 ?>
 
