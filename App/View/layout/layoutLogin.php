@@ -63,7 +63,7 @@
                     </i>
                 </a>
                 <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
+                    <a href="index.php?page=login" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
                        data-target="#modalLoginForm">Login</a>
                     <a href="index.php?page=create-acc" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
                        data-target="#modalRegisterForm">Create An Account</a>

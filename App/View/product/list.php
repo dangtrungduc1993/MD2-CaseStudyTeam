@@ -1,5 +1,7 @@
-<a href="index.php?page=product-create">Create</a>
+<?php include "App/View/layout/layoutHome.php" ?>
 
+<div class="container mt-4 ">
+    <a type="button" class="btn btn-primary mb-4" href="index.php?page=product-create">Create</a>
 <table border="1">
     <thead>
     <tr>
@@ -28,8 +30,8 @@
                 <td><?php echo $product->Type ?></td>
                 <td><?php echo $product->Brand ?></td>
                 <td><?php echo $product->Sizes ?></td>
-                <td><a href="index.php?page=product-detail&id=<?php echo $product->id?>">Detail</a></td>
-                <td><a href="index.php?page=product-update&id=<?php echo $product->id?>">Update</a></td>
+                <td><a href="index.php?page=product-detail&id=<?php echo $product->id ?>">Detail</a></td>
+                <td><a href="index.php?page=product-update&id=<?php echo $product->id ?>">Update</a></td>
                 <td><a onclick="return confirm('Are you sure ?')" href="index.php?page=product-delete&id=<?php echo $product->id?>">Delete</a></td>
 
 
@@ -43,3 +45,4 @@
 
     </tbody>
 </table>
+</div>

@@ -1,3 +1,5 @@
+<?php include "App/View/layout/layoutHome.php" ?>
+
 <a href="index.php?page=shoeType-create">Create</a>
 
 <table border="1">

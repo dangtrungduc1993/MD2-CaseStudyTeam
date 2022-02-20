@@ -1,3 +1,5 @@
+<?php include "App/View/layout/layoutHome.php" ?>
+<div class="container mt-3">
 <form action="" method="post">
     <input type="text" name="name" value="<?php echo $data->Name?>">
     <input type="text" name="image"value="<?php echo $data->image?>">
@@ -9,3 +11,4 @@
     <input type="text" name="size_id" value="<?php echo $data->Sizes?>">
     <button>Update</button>
 </form>
+</div>
