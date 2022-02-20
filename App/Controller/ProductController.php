@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\shoeTypeModel;
+
 use App\Model\ProductModel;
 
 class ProductController
