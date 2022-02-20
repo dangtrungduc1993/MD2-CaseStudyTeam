@@ -2,22 +2,29 @@
 
 namespace App\Model;
 
-class AdminModel
+class AdminModel extends BaseModel
 {
-    public $connect;
+    public $table = "admins";
 
-    public function __construct()
+    public function createAdmin($data)
     {
-        $db = new DBConnect();
-        $this->connect = $db->connect();
+        $sql = "insert into admins (name,email,password) values (?,?,?)";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->bindParam(1,$data["name"]);
+        $stmt->bindParam(2,$data["email"]);
+        $stmt->bindParam(3,$data["password"]);
+        $stmt->execute();
     }
-
-    public function getAll()
-    {
-        $sql = "select * from admins";
-        $stmt = $this->connect->query($sql);
-        return $stmt->fetchAll(\PDO::FETCH_OBJ);
-
+    public function updateAdmin($id,$data){
+//        var_dump($data);
+//        die();
+        $sql="update admins set name = ?, email = ?, password = ? where  id = ?";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->bindParam(1,$data["name"]);
+        $stmt->bindParam(2,$data["email"]);
+        $stmt->bindParam(3,$data["password"]);
+        $stmt->bindParam(4,$id);
+        $stmt->execute();
     }
 
     public function checkLogin($email, $password): bool

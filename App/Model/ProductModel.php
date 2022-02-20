@@ -49,7 +49,7 @@ class ProductModel extends BaseModel
         $stmt->execute();
     }
     public function updateProduct($id,$data){
-        $sql="update products set name = ?, image = ?, price = ?, quantity = ?, content = ?, content = ?, shoeType_id = ?, brand_id = ?, size_id = ? where  id=?";
+        $sql="update products set name = ?, image = ?, price = ?, quantity = ?, content = ?, shoeType_id = ?, brand_id = ?, size_id = ? where  id=?";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1,$data["name"]);
         $stmt->bindParam(2,$data["image"]);

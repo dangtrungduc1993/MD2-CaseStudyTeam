@@ -4,11 +4,20 @@ require "vendor/autoload.php";
 
 use App\Controller\AdminController;
 use App\Controller\ProductController;
-use App\Controller\shoeTypeController;
+use App\Controller\sizeController;
+use App\Controller\BrandController;
+use App\Controller\ShoeTypeController;
+use App\Controller\CustomerController;
 
 $admin = new AdminController();
 $productController = new ProductController();
-$shoeTypeController = new shoeTypeController();
+$sizeController = new SizeController();
+$brandController = new BrandController();
+$shoeTypeController = new ShoeTypeController();
+$customerController = new CustomerController();
+
+
+
 $page = $_GET["page"] ?? "";
 
 ?>
@@ -26,8 +35,11 @@ $page = $_GET["page"] ?? "";
 </head>
 <body>
 
-<!--<a href="index.php?page=product-list">Show list Product</a>-->
-<!--<a href="index.php?page=shoeType-list">Show list Shoe Type</a>-->
+<a href="index.php?page=product-list">Show list Product</a>
+<a href="index.php?page=shoeType-list">Show list Shoe Type</a>
+<a href="index.php?page=brand-list">Show list Brand</a>
+<a href="index.php?page=size-list">Show list Size</a>
+<a href="index.php?page=customer-list">Show list Customer</a>
 
 
 <?php
@@ -47,9 +59,69 @@ switch ($page) {
     case "product-update":
         $productController->updateProduct();
         break;
+
+
+    case "size-list":
+        $sizeController->showAll();
+        break;
+    case "size-detail":
+        $sizeController->showById($_GET["id"]);
+        break;
+    case "size-delete":
+        $sizeController->deleteById($_GET["id"]);
+        break;
+    case "size-create":
+        $sizeController->createsize();
+        break;
+    case "size-update":
+        $sizeController->updatesize();
+        break;
+
+
     case "shoeType-list":
         $shoeTypeController->showAll();
         break;
+    case "shoeType-detail":
+        $shoeTypeController->showById($_GET["id"]);
+        break;
+    case "shoeType-delete":
+        $shoeTypeController->deleteById($_GET["id"]);
+        break;
+    case "shoeType-create":
+        $shoeTypeController->createShoeType();
+        break;
+    case "shoeType-update":
+        $shoeTypeController->updateShoeType();
+        break;
+
+
+    case "brand-list":
+        $brandController->showAll();
+        break;
+    case "brand-detail":
+        $brandController->showById($_GET["id"]);
+        break;
+    case "brand-delete":
+        $brandController->deleteById($_GET["id"]);
+        break;
+    case "brand-create":
+        $brandController->createBrand();
+        break;
+    case "brand-update":
+        $brandController->updateBrand();
+        break;
+
+
+    case "customer-list":
+        $customerController->showAll();
+        break;
+    case "customer-detail":
+        $customerController->showById($_GET["id"]);
+        break;
+
+
+
+
     case "login":
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $admin->showFormLogin();
