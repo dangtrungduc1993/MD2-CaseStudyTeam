@@ -3,7 +3,10 @@
 namespace App\Controller;
 
 
+use App\Model\BrandModel;
 use App\Model\ProductModel;
+use App\Model\ShoeTypeModel;
+use App\Model\SizeModel;
 
 class ProductController
 {
@@ -39,6 +42,13 @@ class ProductController
     public function createProduct()
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            $shoeTypeModel = new ShoeTypeModel();
+            $shoeTypes = $shoeTypeModel->showAll();
+            $brandModel = new BrandModel();
+            $brands = $brandModel->showAll();
+            $sizeModel = new SizeModel();
+            $sizes = $sizeModel->showAll();
+
             include "App/View/product/create.php";
         } else {
             $this->productModel->createProduct($_POST);
@@ -49,6 +59,13 @@ class ProductController
     public function updateProduct()
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            $shoeTypeModel = new ShoeTypeModel();
+            $shoeTypes = $shoeTypeModel->showAll();
+            $brandModel = new BrandModel();
+            $brands = $brandModel->showAll();
+            $sizeModel = new SizeModel();
+            $sizes = $sizeModel->showAll();
+
             $data = $this->productModel->showById($_GET["id"]);
             include "App/View/product/update.php";
         } else {

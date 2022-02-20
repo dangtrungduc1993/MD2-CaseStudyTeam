@@ -6,9 +6,21 @@
     <input type="text" name="price"value="<?php echo $data->price?>">
     <input type="text" name="quantity"value="<?php echo $data->quantity?>">
     <input type="text" name="content" value="<?php echo $data->content?>">
-    <input type="text" name="shoeType_id" value="<?php echo $data->Type?>">
-    <input type="text" name="brand_id" value="<?php echo $data->Brand?>">
-    <input type="text" name="size_id" value="<?php echo $data->Sizes?>">
+    <select name="shoeType_id" id="">
+        <?php foreach ($shoeTypes as $shoeType): ?>
+            <option value="<?php echo $shoeType->id?>"><?php echo $shoeType->name?></option>
+        <?php endforeach; ?>
+    </select>
+    <select name="brand_id" id="">
+        <?php foreach ($brands as $brand): ?>
+            <option value="<?php echo $brand->id?>"><?php echo $brand->name?></option>
+        <?php endforeach; ?>
+    </select>
+    <select name="size_id" id="">
+        <?php foreach ($sizes as $size): ?>
+            <option value="<?php echo $size->id?>"><?php echo $size->size?></option>
+        <?php endforeach; ?>
+    </select>
     <button>Update</button>
 </form>
 </div>
