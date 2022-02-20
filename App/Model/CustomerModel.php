@@ -2,23 +2,23 @@
 
 namespace App\Model;
 
-class AdminModel extends BaseModel
+class CustomerModel extends BaseModel
 {
-    public $table = "admins";
+    public $table = "customers";
 
-    public function createAdmin($data)
+    public function createCustomer($data)
     {
-        $sql = "insert into admins (name,email,password) values (?,?,?)";
+        $sql = "insert into customers (name,email,password) values (?,?,?)";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1,$data["name"]);
         $stmt->bindParam(2,$data["email"]);
         $stmt->bindParam(3,$data["password"]);
         $stmt->execute();
     }
-    public function updateAdmin($id,$data){
+    public function updateCustomer($id,$data){
 //        var_dump($data);
 //        die();
-        $sql="update admins set name = ?, email = ?, password = ? where  id = ?";
+        $sql="update customers set name = ?, email = ?, password = ? where  id = ?";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1,$data["name"]);
         $stmt->bindParam(2,$data["email"]);

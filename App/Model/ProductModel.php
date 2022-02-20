@@ -7,10 +7,10 @@ class ProductModel extends BaseModel
 
     public function showAll()
     {
-        $sql = "select products.id as id, products.name as Name, image,price, quantity, content,shoetypes.name as Type, brands.name as Brand, sizes.size as Sizes from products
+        $sql = "select products.id as id, products.name as Name, image,price, quantity, content,shoetypes.name as Type, brands.name as Brand, size.size as Sizes from products
                 join shoetypes on products.shoeType_id = shoetypes.id
                 join brands on products.brand_id = brands.id
-                join sizes on products.size_id = sizes.id
+                join size on products.size_id = size.id
             ";
 
         $stmt = $this->connect->query($sql);
@@ -19,10 +19,10 @@ class ProductModel extends BaseModel
 
     public function showById($id)
     {
-        $sql = "select products.id as id, products.name as Name, image,price, quantity, content,shoetypes.name as Type, brands.name as Brand, sizes.size as Sizes from products
+        $sql = "select products.id as id, products.name as Name, image,price, quantity, content,shoetypes.name as Type, brands.name as Brand, size.size as Sizes from products
                 join shoetypes on products.shoeType_id = shoetypes.id
                 join brands on products.brand_id = brands.id
-                join sizes on products.size_id = sizes.id where products.id =$id"         ;
+                join size on products.size_id = size.id where products.id =$id"         ;
 //        $sql = "select * from products where id = ".$id;
         $stmt = $this->connect->query($sql);
         return $stmt->fetch(\PDO::FETCH_OBJ);
@@ -33,8 +33,6 @@ class ProductModel extends BaseModel
          $this->connect->query($sql);
 
     }
-
-
 
     public function createProduct($data)
     {
@@ -51,7 +49,10 @@ class ProductModel extends BaseModel
         $stmt->execute();
     }
     public function updateProduct($id,$data){
-        $sql="update products set name = ?, image = ?, price = ?, quantity = ?, content = ?, content = ?, shoeType_id = ?, brand_id = ?, size_id = ? where  id=?";
+//        var_dump($data);
+//        die();
+        $sql="update products set name = ?, image = ?, price = ?, quantity = ?,
+        content = ?, shoeType_id = ?, brand_id = ?, size_id = ? where  id = ?";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1,$data["name"]);
         $stmt->bindParam(2,$data["image"]);

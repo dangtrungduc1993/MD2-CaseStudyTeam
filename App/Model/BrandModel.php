@@ -2,21 +2,21 @@
 
 namespace App\Model;
 
-class shoeTypeModel extends BaseModel
+class BrandModel extends BaseModel
 {
-    public $table = "shoetypes";
+    public $table = "brands";
 
-    public function createShoeType($data)
+    public function createBrand($data)
     {
-        $sql = "insert into shoetypes (name) values (?)";
+        $sql = "insert into brands (name) values (?)";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1,$data["name"]);
         $stmt->execute();
     }
-    public function updateShoeType($id,$data){
+    public function updateBrand($id,$data){
 //        var_dump($data);
 //        die();
-        $sql="update shoetypes set name = ? where  id = ?";
+        $sql="update brands set name = ? where  id = ?";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1,$data["name"]);
         $stmt->bindParam(2,$id);

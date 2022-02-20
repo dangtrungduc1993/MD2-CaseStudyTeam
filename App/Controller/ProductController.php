@@ -50,6 +50,8 @@ class ProductController
         public function updateProduct(){
             if ($_SERVER["REQUEST_METHOD"]== "GET"){
                 $data = $this->productModel->showById($_GET["id"]);
+//                var_dump($data);
+//                die();
                 include "App/View/product/update.php";
             }
             else {

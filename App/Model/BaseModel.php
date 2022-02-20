@@ -15,7 +15,7 @@ class BaseModel
 
     public function showAll()
     {
-        $sql = "select * from $this->table ";
+        $sql = "select * from $this->table";
         $stmt = $this->connect->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }

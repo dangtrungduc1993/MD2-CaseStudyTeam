@@ -13,9 +13,9 @@
         <?php foreach ($shoeTypes as $key => $shoeType): ?>
             <tr>
                 <td><?php echo $key + 1 ?></td>
-                <td><?php echo $shoeType->Name ?></td>
+                <td><?php echo $shoeType->name ?></td>
                 <td><a href="index.php?page=shoeType-detail&id=<?php echo $shoeType->id?>">Detail</a></td>
-                <td><a href="index.php?page=shoeType-update">Update</a></td>
+                <td><a href="index.php?page=shoeType-update&id=<?php echo $shoeType->id?>">Update</a></td>
                 <td><a onclick="return confirm('Are you sure ?')" href="index.php?page=shoeType-delete&id=<?php echo $shoeType->id?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>

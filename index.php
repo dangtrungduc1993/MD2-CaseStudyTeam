@@ -4,8 +4,10 @@ require "vendor/autoload.php";
 
 use App\Controller\AdminController;
 use App\Controller\ProductController;
-
 use App\Controller\shoeTypeController;
+use App\Controller\BrandController;
+use App\Controller\SizeController;
+use App\Controller\CustomerController;
 
 
 
@@ -13,8 +15,13 @@ use App\Model\AdminModel;
 
 $admin = new AdminController();
 $productController = new ProductController();
-
 $shoeTypeController = new shoeTypeController();
+$brandController = new BrandController();
+$sizeController = new SizeController();
+$customerController = new CustomerController();
+
+
+
 $page = $_GET["page"]??"";
 
 
@@ -37,6 +44,10 @@ $page = $_GET["page"]??"";
 
 <a href="index.php?page=product-list">Show list Product</a>
 <a href="index.php?page=shoeType-list">Show list Shoe Type</a>
+<a href="index.php?page=brand-list">Show list Brand</a>
+<a href="index.php?page=size-list">Show list Size</a>
+<a href="index.php?page=customer-list">Show list Customer</a>
+<a href="index.php?page=customer-list">Show list Admin</a>
 <?php
     switch ($page){
         case "product-list":
@@ -60,17 +71,81 @@ $page = $_GET["page"]??"";
         case "shoeType-list":
             $shoeTypeController->showAll();
             break;
-        case "product-detail":
-            $productController->showById($_GET["id"]);
+        case "shoeType-detail":
+            $shoeTypeController->showById($_GET["id"]);
             break;
-        case "product-delete":
-            $productController->deleteById($_GET["id"]);
+        case "shoeType-delete":
+            $shoeTypeController->deleteById($_GET["id"]);
             break;
-        case "product-create":
-            $productController->createProduct();
+        case "shoeType-create":
+            $shoeTypeController->createShoeType();
             break;
-        case "product-update":
-            $productController->updateProduct();
+        case "shoeType-update":
+            $shoeTypeController->updateShoeType();
+
+
+        case "brand-list":
+            $brandController->showAll();
+            break;
+        case "brand-detail":
+            $brandController->showById($_GET["id"]);
+            break;
+        case "brand-delete":
+            $brandController->deleteById($_GET["id"]);
+            break;
+        case "brand-create":
+            $brandController->createBrand();
+            break;
+        case "brand-update":
+            $brandController->updateBrand();
+
+
+        case "size-list":
+            $sizeController->showAll();
+            break;
+        case "size-detail":
+            $sizeController->showById($_GET["id"]);
+            break;
+        case "size-delete":
+            $sizeController->deleteById($_GET["id"]);
+            break;
+        case "size-create":
+            $sizeController->createSize();
+            break;
+        case "size-update":
+            $sizeController->updateSize();
+
+
+        case "customer-list":
+            $customerController->showAll();
+            break;
+        case "customer-detail":
+            $customerController->showById($_GET["id"]);
+            break;
+        case "customer-delete":
+            $customerController->deleteById($_GET["id"]);
+            break;
+        case "customer-create":
+            $customerController->createCustomer();
+            break;
+        case "customer-update":
+            $customerController->updateCustomer();
+
+
+        case "admin-list":
+            $admin->showAll();
+            break;
+        case "admin-detail":
+            $admin->showById($_GET["id"]);
+            break;
+        case "admin-delete":
+            $admin->deleteById($_GET["id"]);
+            break;
+        case "admin-create":
+            $admin->createAdmin();
+            break;
+        case "admin-update":
+            $adminController->updateAdmin();
 
 
         break;

@@ -29,7 +29,7 @@
                 <td><?php echo $product->Brand ?></td>
                 <td><?php echo $product->Sizes ?></td>
                 <td><a href="index.php?page=product-detail&id=<?php echo $product->id?>">Detail</a></td>
-                <td><a href="index.php?page=product-update">Update</a></td>
+                <td><a href="index.php?page=product-update&id=<?php echo $product->id?>">Update</a></td>
                 <td><a onclick="return confirm('Are you sure ?')" href="index.php?page=product-delete&id=<?php echo $product->id?>">Delete</a></td>
 
 
