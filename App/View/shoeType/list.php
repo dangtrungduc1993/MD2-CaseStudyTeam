@@ -1,6 +1,7 @@
 <?php include "App/View/layout/layoutHome.php" ?>
 
-<a href="index.php?page=shoeType-create">Create</a>
+<div class="container mt-3">
+<a type="button" class="btn btn-primary mb-4" href="index.php?page=shoeType-create">Create</a>
 
 <table border="1">
     <thead>
@@ -29,4 +30,4 @@
 
     </tbody>
 </table>
-
+</div>

@@ -1,3 +1,6 @@
+<?php include "App/View/layout/layoutHome.php"?>
+
+
 <div class="container mt-4">
     <a href="index.php?page=size-create">Create</a>
     <table border="1">

@@ -133,6 +133,7 @@ switch ($page) {
         $admin->logout();
         break;
     default:
+        header("Location:index.php?page=product-list");
 
 }
 ?>

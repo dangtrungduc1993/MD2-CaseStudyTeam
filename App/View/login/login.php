@@ -112,6 +112,7 @@
         <button>Sign in</button>
     </div>
     </form>
+    
 </div>
 <p class="last">Forgot your password? <a href="#"> Reset Password </a></p>
 <script src="/app.js"></script>

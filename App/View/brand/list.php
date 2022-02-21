@@ -1,3 +1,7 @@
+<?php include "App/View/layout/layoutHome.php"; ?>
+
+
+
 <div class="container mt-4" >
 
     <a href="index.php?page=brand-create">Create</a>
