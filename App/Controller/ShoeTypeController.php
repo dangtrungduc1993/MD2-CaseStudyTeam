@@ -33,10 +33,10 @@ class ShoeTypeController
             include "App/View/shoeType/create.php";
         }
         else {
-            $data=[
-                "name"=>$_REQUEST["name"],
-            ];
-            $this->shoeTypeModel->createShoeType($data);
+//            $data=[
+//                "name"=>$_REQUEST["name"],
+//            ];
+            $this->shoeTypeModel->createShoeType($_POST);
             header("location:index.php?page=shoeType-list");
         }}
     public function updateShoeType(){
@@ -46,7 +46,7 @@ class ShoeTypeController
         }
         else {
 
-            $this->shoeTypeModel->updateShoeType($_REQUEST["id"],$_POST);
+            $this->shoeTypeModel->updateShoeType($_GET["id"],$_POST);
             header("location:index.php?page=shoeType-list");
         }
     }
