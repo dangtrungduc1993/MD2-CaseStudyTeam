@@ -4,7 +4,7 @@
 <div class="mt-3">
     <form action="" method="post" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Nhập tên giày">
-        <input type="file" name="image" placeholder="Chọn ảnh giày">
+        <lainput type="file" name="image" pceholder="Chọn ảnh giày">
         <input type="text" name="price" placeholder="Nhập giá giày">
         <input type="text" name="quantity"placeholder="Nhập số lượng">
         <input type="text" name="content" placeholder="Nhập mô tả săn phẩm">
