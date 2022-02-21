@@ -71,7 +71,6 @@ class ProductController
             include "App/View/product/update.php";
         } else {
             $request["image"] = $this->uploadImg();
-
             $this->productModel->updateProduct($_REQUEST["id"], $request);
             header("location:index.php?page=product-list");
         }
