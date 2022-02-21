@@ -117,6 +117,9 @@ switch ($page) {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $admin->showFormLogin();
         }
+        else{
+            $admin->login($_POST);
+        }
         break;
     case "logout":
         $admin->logout();

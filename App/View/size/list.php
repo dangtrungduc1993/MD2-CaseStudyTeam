@@ -2,11 +2,13 @@
 
 
 <div class="container mt-4">
+    <div>
     <a type="button" class="btn btn-primary mb-4" href="index.php?page=product-list">Show list Product</a>
     <a type="button" class="btn btn-primary mb-4" href="index.php?page=shoeType-list">Show list Shoe Type</a>
     <a type="button" class="btn btn-primary mb-4" href="index.php?page=brand-list">Show list Brand</a>
     <!--    <a href="index.php?page=size-list">Show list Size</a>-->
     <a type="button" class="btn btn-primary mb-4" href="index.php?page=customer-list">Show list Customer</a>
+    </div>
     <a type="button" class="btn btn-primary mb-4" href="index.php?page=size-create">Create Size</a>
     <table style="background-color: #ffffff ; color: #000000" class="table table-bordered table-dark">
         <thead style="text-align: center">
