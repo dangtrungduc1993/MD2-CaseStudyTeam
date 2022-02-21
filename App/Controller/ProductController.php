@@ -57,7 +57,7 @@ class ProductController
         }
     }
 
-    public function updateProduct()
+    public function updateProduct($request)
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $shoeTypeModel = new ShoeTypeModel();
@@ -70,7 +70,9 @@ class ProductController
             $data = $this->productModel->showById($_GET["id"]);
             include "App/View/product/update.php";
         } else {
-            $this->productModel->updateProduct($_REQUEST["id"], $_POST);
+            $request["image"] = $this->uploadImg();
+
+            $this->productModel->updateProduct($_REQUEST["id"], $request);
             header("location:index.php?page=product-list");
         }
     }
@@ -78,7 +80,7 @@ class ProductController
     public function uploadImg($name = "default.png")
     {
         $target_dir = "uploads/";
-        $target_file = $target_dir . time() .basename($_FILES["image"]["name"]);
+        $target_file =  $target_dir. time() .basename($_FILES["image"]["name"]);
         $default = $target_dir.$name;
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             return $target_file;

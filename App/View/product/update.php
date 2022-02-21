@@ -1,8 +1,8 @@
 <?php include "App/View/layout/layoutHome.php" ?>
 <div class="container mt-3">
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <input type="text" name="name" value="<?php echo $data->Name?>">
-    <input type="text" name="image"value="<?php echo $data->image?>">
+    <input type="file" name="image"value="<?php echo $data->image?>">
     <input type="text" name="price"value="<?php echo $data->price?>">
     <input type="text" name="quantity"value="<?php echo $data->quantity?>">
     <input type="text" name="content" value="<?php echo $data->content?>">

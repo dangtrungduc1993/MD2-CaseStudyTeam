@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION["admin"])){
+    header("location:index.php?page=login");
+}
+?>
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light"  style="background-color: #e3f2fd;">
         <a class="navbar-brand" href="index.php?page=home"><img width="100px" src="img/lusstore-removebg-preview.png" alt=""></a>

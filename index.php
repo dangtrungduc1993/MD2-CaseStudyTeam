@@ -52,7 +52,7 @@ switch ($page) {
         $productController->createProduct($_POST);
         break;
     case "product-update":
-        $productController->updateProduct();
+        $productController->updateProduct($_POST);
         break;
 
 
@@ -77,10 +77,10 @@ switch ($page) {
         $shoeTypeController->showAll();
         break;
     case "shoeType-detail":
-        $shoeTypeController->showById($_GET["id"]);
+        $shoeTypeController->showById();
         break;
     case "shoeType-delete":
-        $shoeTypeController->deleteById($_GET["id"]);
+        $shoeTypeController->deleteById();
         break;
     case "shoeType-create":
         $shoeTypeController->createShoeType();
