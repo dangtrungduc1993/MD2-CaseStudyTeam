@@ -24,7 +24,7 @@ if (!isset($_SESSION["admin"])) {
                         Men
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?page=product-list">Sneaker</a>
+                        <a class="dropdown-item" href="index.php?page=men-sneaker">Sneaker</a>
                         <a class="dropdown-item" href="index.php?page=shoeType-list">Run</a>
                         <a class="dropdown-item" href="#">Practice</a>
                         <!--                    <div class="dropdown-divider"></div>-->

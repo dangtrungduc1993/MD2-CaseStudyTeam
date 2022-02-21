@@ -134,6 +134,9 @@ switch ($page) {
     case "home-detail":
         $admin->showAll();
         break;
+    case "men-sneaker":
+        $admin->showSneaker();
+        break;
 
 
     default:

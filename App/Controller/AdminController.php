@@ -66,5 +66,10 @@ class AdminController
         include "App/View/home/detail.php";
     }
 
+    public function showSneaker()
+    {
+
+    }
+
 
 }
