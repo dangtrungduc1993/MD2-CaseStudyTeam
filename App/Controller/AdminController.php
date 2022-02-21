@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Model\AdminModel;
@@ -42,9 +43,9 @@ class AdminController
 
     public function admin()
     {
-        if ($_SESSION["admin"]){
+        if ($_SESSION["admin"]) {
             include "App/View/admin/admin.php";
-        }else{
+        } else {
             header("location:index.php?page=home");
         }
     }
@@ -53,7 +54,7 @@ class AdminController
     {
         $customer = new ProductModel();
         $customers = $customer->getAll();
-        include  "App/View/home/home.php";
+        include "App/View/home/home.php";
     }
 
 

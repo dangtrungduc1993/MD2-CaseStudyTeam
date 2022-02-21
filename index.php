@@ -36,10 +36,10 @@ $page = $_GET["page"] ?? "";
 
 <?php
 switch ($page) {
+
     case "product-list":
         $productController->showAll();
         break;
-    case "product-detail":
         $productController->showById($_GET["id"]);
         break;
     case "product-delete":
@@ -122,6 +122,7 @@ switch ($page) {
     case "logout":
         $admin->logout();
         break;
+
 
     case "admin":
         $admin->admin();

@@ -1,13 +1,15 @@
 <?php
-if (!isset($_SESSION["admin"])){
+if (!isset($_SESSION["admin"])) {
     header("location:index.php?page=login");
 }
 ?>
 
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light"  style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="index.php?page=home"><img width="100px" src="img/lusstore-removebg-preview.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="index.php?page=home"><img width="100px" src="img/lusstore-removebg-preview.png"
+                                                                alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -17,7 +19,8 @@ if (!isset($_SESSION["admin"])){
                     <a class="nav-link" href="index.php?page=home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
                         Men
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -29,7 +32,8 @@ if (!isset($_SESSION["admin"])){
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
                         Women
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -40,7 +44,8 @@ if (!isset($_SESSION["admin"])){
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
                         Brand
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -52,12 +57,13 @@ if (!isset($_SESSION["admin"])){
                     </div>
                 </li>
                 <li class="nav-item">
-<!--                    <a class="nav-link disabled">Disabled</a>-->
+                    <!--                    <a class="nav-link disabled">Disabled</a>-->
                 </li>
             </ul>
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                   <?php  echo $_SESSION["admin"]->name ?>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-expanded="false">
+                    <?php echo $_SESSION["admin"]->name ?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Action</a>

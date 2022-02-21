@@ -7,6 +7,4 @@ class CustomerModel extends BaseModel
     public $table = "customers";
 
 
-
-
 }

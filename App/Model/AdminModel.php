@@ -42,7 +42,7 @@ class AdminModel extends BaseModel
     {
         $sql = "select * from $this->table where email = ?";
         $stmt = $this->connect->prepare($sql);
-        $stmt->bindParam(1,$email);
+        $stmt->bindParam(1, $email);
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_OBJ);
     }
