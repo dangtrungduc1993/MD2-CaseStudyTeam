@@ -116,8 +116,6 @@ switch ($page) {
     case "login":
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $admin->showFormLogin();
-        } else {
-            $admin->login($_REQUEST);
         }
         break;
     case "logout":
@@ -138,6 +136,8 @@ switch ($page) {
 
     default:
         header("Location:index.php?page=home");
+
+
 
 }
 ?>
