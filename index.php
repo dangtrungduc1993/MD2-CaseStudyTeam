@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "vendor/autoload.php";
+require "vendor/autoload.php";
 
 use App\Controller\AdminController;
 use App\Controller\ProductController;
@@ -139,8 +140,6 @@ switch ($page) {
 
     default:
         header("Location:index.php?page=home");
-
-
 
 }
 ?>
