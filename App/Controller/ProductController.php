@@ -57,7 +57,7 @@ class ProductController
         }
     }
 
-    public function updateProduct()
+    public function updateProduct($request)
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $shoeTypeModel = new ShoeTypeModel();
@@ -70,7 +70,8 @@ class ProductController
             $data = $this->productModel->showById($_GET["id"]);
             include "App/View/product/update.php";
         } else {
-            $this->productModel->updateProduct($_REQUEST["id"], $_POST);
+            $request["image"] = $this->uploadImg();
+            $this->productModel->updateProduct($_REQUEST["id"], $request);
             header("location:index.php?page=product-list");
         }
     }

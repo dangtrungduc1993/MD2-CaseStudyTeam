@@ -38,5 +38,14 @@ class AdminModel extends BaseModel
         return $stmt->rowCount() > 0;
     }
 
+    public function getByEmail($email)
+    {
+        $sql = "select * from $this->table where email = ?";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->bindParam(1,$email);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_OBJ);
+    }
+
 
 }

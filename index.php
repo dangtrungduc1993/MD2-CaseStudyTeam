@@ -52,7 +52,7 @@ switch ($page) {
         $productController->createProduct($_POST);
         break;
     case "product-update":
-        $productController->updateProduct();
+        $productController->updateProduct($_POST);
         break;
 
 

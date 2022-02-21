@@ -10,7 +10,7 @@ class ProductModel extends BaseModel
         $sql = "select products.id as id, products.name as Name, image,price, quantity, content,shoetypes.name as Type, brands.name as Brand, sizes.size as Sizes from $this->table
                 join shoetypes on products.shoeType_id = shoetypes.id
                 join brands on products.brand_id = brands.id
-                join sizes on products.size_id = sizes.id";
+                join sizes on products.size_id = sizes.id order by products.id desc ";
         $stmt = $this->connect->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }

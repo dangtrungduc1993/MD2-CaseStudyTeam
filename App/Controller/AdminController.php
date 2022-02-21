@@ -15,7 +15,7 @@ class AdminController
     public function login($request)
     {
         if ($this->adminController->checkLogin($request["email"], $request["password"])) {
-            $_SESSION["admin"] = $this->adminController->showAll();
+            $_SESSION["admin"] = $this->adminController->getByEmail($request["email"]);
             header("location:index.php?page=product-list");
         } else {
             header("location:index.php?page=login");
