@@ -35,7 +35,7 @@ class AdminController
         if (isset($_SESSION["admin"])) {
             header("location:index.php?page=product-list");
         }
-        include_once "App/View/login/login.php";
+        include "App/View/login/login.php";
     }
 
     public function admin()
@@ -43,7 +43,7 @@ class AdminController
         if ($_SESSION["admin"]){
             include "App/View/admin/admin.php";
         }else{
-            header("location:index.php?product-líst");
+            header("location:index.php?product-list");
         }
     }
 
