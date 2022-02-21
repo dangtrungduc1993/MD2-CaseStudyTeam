@@ -57,5 +57,14 @@ class AdminController
         include "App/View/home/home.php";
     }
 
+    public function showAll()
+    {
+        $customer = new ProductModel();
+        $customers = $customer->showById($_GET["id"]);
+//        var_dump($customers);
+//        die();
+        include "App/View/home/detail.php";
+    }
+
 
 }

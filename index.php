@@ -8,6 +8,7 @@ use App\Controller\sizeController;
 use App\Controller\BrandController;
 use App\Controller\ShoeTypeController;
 use App\Controller\CustomerController;
+use App\Model\ProductModel;
 
 $admin = new AdminController();
 $productController = new ProductController();
@@ -129,6 +130,9 @@ switch ($page) {
         break;
     case "home":
         $admin->home();
+        break;
+    case "home-detail":
+        $admin->showAll();
         break;
 
 

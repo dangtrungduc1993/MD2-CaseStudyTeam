@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-8"></div>
         <div class="col-4">
-            <form class="form-inline my-2 my-lg-0" method="post">
+            <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -12,7 +12,7 @@
     </div>
     <div class="card-deck">
         <div class="row ">
-            <?php foreach ($customers as $customer): ?>
+            <?php foreach ($search as $customer): ?>
                 <div class="col-3 mt-3">
                     <div class="card h-100">
                         <img src="<?php echo $customer->image ?>" class="card-img-top" alt="...">
