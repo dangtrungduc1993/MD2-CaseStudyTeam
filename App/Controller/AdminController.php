@@ -15,7 +15,7 @@ class AdminController
     public function login($request)
     {
         if ($this->adminController->checkLogin($request["email"], $request["password"])) {
-            $_SESSION["user"] = $this->adminController->showAll();
+            $_SESSION["admin"] = $this->adminController->showAll();
             header("location:index.php?page=product-list");
         } else {
             header("location:index.php?page=login");
@@ -25,17 +25,26 @@ class AdminController
 
     public function logout()
     {
-        unset($_SESSION["user"]);
+        unset($_SESSION["admin"]);
         header("Location:index.php?page=login");
     }
 
     public function showFormLogin()
     {
 
-        if (isset($_SESSION["user"])) {
+        if (isset($_SESSION["admin"])) {
             header("location:index.php?page=product-list");
         }
         include_once "App/View/login/login.php";
+    }
+
+    public function admin()
+    {
+        if ($_SESSION["admin"]){
+            include "App/View/admin/admin.php";
+        }else{
+            header("location:index.php?product-líst");
+        }
     }
 
 

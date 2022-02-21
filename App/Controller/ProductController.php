@@ -39,7 +39,7 @@ class ProductController
         header("location:index.php?page=product-list");
     }
 
-    public function createProduct()
+    public function createProduct($request)
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $shoeTypeModel = new ShoeTypeModel();
@@ -51,7 +51,8 @@ class ProductController
 
             include "App/View/product/create.php";
         } else {
-            $this->productModel->createProduct($_POST);
+            $request["image"] = $this->uploadImg();
+            $this->productModel->createProduct($request);
             header("location:index.php?page=product-list");
         }
     }
@@ -71,6 +72,18 @@ class ProductController
         } else {
             $this->productModel->updateProduct($_REQUEST["id"], $_POST);
             header("location:index.php?page=product-list");
+        }
+    }
+
+    public function uploadImg($name = "default.png")
+    {
+        $target_dir = "uploads/";
+        $target_file = $target_dir . time() .basename($_FILES["image"]["name"]);
+        $default = $target_dir.$name;
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            return $target_file;
+        } else {
+            return $default;
         }
     }
 }

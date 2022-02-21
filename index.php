@@ -35,11 +35,6 @@ $page = $_GET["page"] ?? "";
 </head>
 <body>
 
-<a href="index.php?page=product-list">Show list Product</a>
-<a href="index.php?page=shoeType-list">Show list Shoe Type</a>
-<a href="index.php?page=brand-list">Show list Brand</a>
-<a href="index.php?page=size-list">Show list Size</a>
-<a href="index.php?page=customer-list">Show list Customer</a>
 
 
 <?php
@@ -54,7 +49,7 @@ switch ($page) {
         $productController->deleteById($_GET["id"]);
         break;
     case "product-create":
-        $productController->createProduct();
+        $productController->createProduct($_POST);
         break;
     case "product-update":
         $productController->updateProduct();
@@ -132,6 +127,12 @@ switch ($page) {
     case "logout":
         $admin->logout();
         break;
+
+    case "admin":
+        $admin->admin();
+        break;
+
+
     default:
         header("Location:index.php?page=product-list");
 

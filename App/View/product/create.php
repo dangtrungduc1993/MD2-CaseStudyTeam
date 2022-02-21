@@ -2,9 +2,9 @@
 
 <div class="container">
 <div class="mt-3">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Nhập tên giày">
-        <input type="text" name="image" placeholder="Chọn ảnh giày">
+        <input type="file" name="image" placeholder="Chọn ảnh giày">
         <input type="text" name="price" placeholder="Nhập giá giày">
         <input type="text" name="quantity"placeholder="Nhập số lượng">
         <input type="text" name="content" placeholder="Nhập mô tả săn phẩm">

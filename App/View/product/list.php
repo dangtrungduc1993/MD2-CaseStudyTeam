@@ -23,7 +23,7 @@
             <tr>
                 <td><?php echo $key + 1 ?></td>
                 <td><?php echo $product->Name ?></td>
-                <td><?php echo $product->image ?></td>
+                <td><img width="150px" style="margin: 5px" src="<?php echo $product->image ?>" alt=""></td>
                 <td><?php echo $product->price ?></td>
                 <td><?php echo $product->quantity ?></td>
                 <td><?php echo $product->content ?></td>
