@@ -1,3 +1,8 @@
+<?php include "App/View/layout/layoutHome.php "?>
+
+
+<div class="container mt-3">
+
 <table border="1">
     <thead>
     <tr>
@@ -13,3 +18,6 @@
     </tr>
     </tbody>
 </table>
+<a href="index.php?page=shoeType-list" type="button" class="btn btn-primary mt-3">Back</a>
+
+</div>

@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Model\AdminModel;
+use App\Model\CustomerModel;
+use App\Model\ProductModel;
 
 class AdminController
 {
@@ -16,7 +18,7 @@ class AdminController
     {
         if ($this->adminController->checkLogin($request["email"], $request["password"])) {
             $_SESSION["admin"] = $this->adminController->getByEmail($request["email"]);
-            header("location:index.php?page=product-list");
+            header("location:index.php?page=home");
         } else {
             header("location:index.php?page=login");
         }
@@ -33,7 +35,7 @@ class AdminController
     {
 
         if (isset($_SESSION["admin"])) {
-            header("location:index.php?page=product-list");
+            header("location:index.php?page=home");
         }
         include "App/View/login/login.php";
     }
@@ -43,8 +45,15 @@ class AdminController
         if ($_SESSION["admin"]){
             include "App/View/admin/admin.php";
         }else{
-            header("location:index.php?product-list");
+            header("location:index.php?page=home");
         }
+    }
+
+    public function home()
+    {
+        $customer = new ProductModel();
+        $customers = $customer->getAll();
+        include  "App/View/home/home.php";
     }
 
 

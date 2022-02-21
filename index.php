@@ -16,8 +16,6 @@ $brandController = new BrandController();
 $shoeTypeController = new ShoeTypeController();
 $customerController = new CustomerController();
 
-
-
 $page = $_GET["page"] ?? "";
 
 ?>
@@ -34,7 +32,6 @@ $page = $_GET["page"] ?? "";
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-
 
 
 <?php
@@ -115,8 +112,6 @@ switch ($page) {
         break;
 
 
-
-
     case "login":
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $admin->showFormLogin();
@@ -131,10 +126,13 @@ switch ($page) {
     case "admin":
         $admin->admin();
         break;
+    case "home":
+        $admin->home();
+        break;
 
 
     default:
-        header("Location:index.php?page=product-list");
+        header("Location:index.php?page=home");
 
 }
 ?>

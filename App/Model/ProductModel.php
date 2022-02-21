@@ -64,4 +64,10 @@ class ProductModel extends BaseModel
 //        header("location:index.php?page=product-list");
     }
 
+    public function getAll()
+    {
+        $sql = "select name , image , price from $this->table";
+        $stmt = $this->connect->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
 }

@@ -1,5 +1,5 @@
 <?php include "App/View/layout/layoutHome.php"; ?>
-
+<div class="container mt-3">
 <table border="1">
     <thead>
     <tr>
@@ -15,3 +15,6 @@
     </tr>
     </tbody>
 </table>
+
+    <a type="button" class="btn btn-primary mt-3" href="index.php?page=size-list">Back</a>
+</div>
