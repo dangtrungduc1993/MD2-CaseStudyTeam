@@ -16,16 +16,16 @@ class ShoeTypeController
 //        die();
         include "App/View/shoeType/list.php";
     }
-    public function showById($id)
+    public function showById()
     {
-        $shoeTypes = $this->shoeTypeModel->showById($id);
+        $shoeTypes = $this->shoeTypeModel->showById($_GET["id"]);
 //        var_dump($products);
 //        die();
         include "App/View/shoeType/detail.php";
     }
-    public function deleteById($id)
+    public function deleteById()
     {
-        $this->shoeTypeModel->deleteById($id);
+        $this->shoeTypeModel->deleteById($_GET["id"]);
         header("location:index.php?page=shoeType-list");
     }
     public function createShoeType(){

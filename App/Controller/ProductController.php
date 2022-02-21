@@ -79,7 +79,7 @@ class ProductController
     public function uploadImg($name = "default.png")
     {
         $target_dir = "uploads/";
-        $target_file = $target_dir . time() .basename($_FILES["image"]["name"]);
+        $target_file =  $target_dir. time() .basename($_FILES["image"]["name"]);
         $default = $target_dir.$name;
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             return $target_file;
