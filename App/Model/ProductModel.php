@@ -75,12 +75,9 @@ class ProductModel extends BaseModel
 
     public function search($data)
     {
-        $sql= "select id , name , image , price from $this->table where name like %".$data.'%';
-//        $stmt = $this->connect->prepare($sql);
-//        $stmt->bindParam(1,$data["search"]);
-//        $stmt->execute();
+        $sql = "select id, name , image , price from $this->table where name like '%$data%'";
         $stmt = $this->connect->query($sql);
-        return $stmt->fetch(\PDO::FETCH_OBJ);
-
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
+
 }
