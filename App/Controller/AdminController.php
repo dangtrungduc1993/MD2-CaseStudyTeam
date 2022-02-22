@@ -53,7 +53,11 @@ class AdminController
     public function home()
     {
         $customer = new ProductModel();
+        if (empty($_REQUEST['search'])){
         $customers = $customer->getAll();
+        }else{
+            $customers = $customer->search($_REQUEST["search"]);
+        }
         include "App/View/home/home.php";
     }
 
